@@ -1,25 +1,108 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class Calculator extends Component {
+  state = {
+    n1: "",
+    n2: "",
+    res: ""
+  }
+  
+  handleChange1 = (e) => {
+    this.setState({
+      n1: Number(e.target.value)
+    })
+  }
 
-export default App;
+  handleChange2 = (e) => {
+    this.setState({
+      n2: Number(e.target.value)
+    })
+  }
+
+  div = () => {
+    const { n1, n2 } = this.state;
+    if (n1 && n2 !== "") {
+    this.setState({
+      res: n1 / n2
+    })
+   } else {
+     this.setState({
+      res: "undefined value"
+     })
+   }
+  }
+
+
+  mult = () => {
+    const { n1, n2 } = this.state;
+    if (n1 && n2 !== "") {
+    this.setState({
+      res: n1 * n2
+    })
+   } else {
+     this.setState({
+      res: "undefined value"
+     })
+   }
+  }
+
+
+  sub = () => {
+    const { n1, n2 } = this.state;
+    if (n1 && n2 !== "") {
+    this.setState({
+      res: n1 - n2
+    })
+   } else {
+     this.setState({
+      res: "undefined value"
+     })
+   }
+  }
+
+
+  soma = () => {
+    const { n1, n2 } = this.state;
+    if (n1 && n2 !== "") {
+    this.setState({
+      res: n1 + n2
+    })
+   } else {
+     this.setState({
+      res: "undefined value"
+     })
+   }
+  }
+  
+  clear = () => {
+    const { n1, n2 } = this.state;
+    if (n1 && n2 !== "") {
+      this.setState({
+        res: null,
+        n1: 0,
+        n2: 0
+      });
+    } else {
+      this.setState({
+        res: "undefined value."
+      })
+    }
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <h1>Calc App</h1>
+        <h2>{this.state.res}</h2>
+        <input value={this.state.n1} type="number" onChange={this.handleChange1} />
+        <input value={this.state.n2} type="number" onChange={this.handleChange2} />
+        <button className="buttons" onClick={this.div}>/</button>
+        <button className="buttons" onClick={this.mult}>*</button>
+        <button className="buttons" onClick={this.sub}>-</button>
+        <button className="buttons" onClick={this.soma}>+</button>
+        <button className="buttons" onClick={this.clear}>Clear</button>
+      </div>
+    );
+  }
+ }
