@@ -80,8 +80,8 @@ export default class Calculator extends Component {
     if (n1 && n2 !== "") {
       this.setState({
         res: null,
-        n1: 0,
-        n2: 0
+        n1: "",
+        n2: ""
       });
     } else {
       this.setState({
