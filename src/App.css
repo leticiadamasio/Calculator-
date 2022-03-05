@@ -13,14 +13,34 @@
   align-items: center;
 }
 
+.titles{
+ flex-direction: column;
+ position: absolute;
+ margin-bottom: 15%;
+ align-items: center;
+ height: 16%;
+ width: 20%;
+}
+
 h1 {
   color:white;
-  font-size: 7vh;
+  font-size: 7.25vh;
+  position: relative;
+  margin-left: 12%;
 }
 
 h2 {
   color: white;
-  margin-bottom: 15px;
+  margin-top: 1.5vh;
+  margin-bottom: 5vh;
+  font-size: 4vh;
+  margin-left: 25%;
+}
+
+.container-inputs{
+  display: flex;
+  flex-direction: center;
+  align-items: center;
 }
 
 input {

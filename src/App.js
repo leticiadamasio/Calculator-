@@ -93,8 +93,11 @@ export default class Calculator extends Component {
   render() {
     return (
       <div className="container">
+      <div className="titles">
         <h1>Calc App</h1>
-        <h2>{this.state.res}</h2>
+        <h2>Result: {this.state.res}</h2>
+      </div>
+      <div className="container-inputs">
         <input value={this.state.n1} type="number" onChange={this.handleChange1} />
         <input value={this.state.n2} type="number" onChange={this.handleChange2} />
         <button className="buttons" onClick={this.div}>/</button>
@@ -102,6 +105,7 @@ export default class Calculator extends Component {
         <button className="buttons" onClick={this.sub}>-</button>
         <button className="buttons" onClick={this.soma}>+</button>
         <button className="buttons" onClick={this.clear}>Clear</button>
+      </div>
       </div>
     );
   }
