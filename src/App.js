@@ -28,7 +28,7 @@ export default class Calculator extends Component {
     })
    } else {
      this.setState({
-      res: "undefined value"
+      res: "undefined value."
      })
    }
   }
@@ -42,7 +42,7 @@ export default class Calculator extends Component {
     })
    } else {
      this.setState({
-      res: "undefined value"
+      res: "undefined value."
      })
    }
   }
@@ -56,7 +56,7 @@ export default class Calculator extends Component {
     })
    } else {
      this.setState({
-      res: "undefined value"
+      res: "undefined value."
      })
    }
   }
@@ -70,7 +70,7 @@ export default class Calculator extends Component {
     })
    } else {
      this.setState({
-      res: "undefined value"
+      res: "undefined value."
      })
    }
   }
